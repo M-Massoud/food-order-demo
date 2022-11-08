@@ -19,7 +19,8 @@
   text-align: right;
 }
 
-.actions button {
+.actions button,
+.close-button {
   font: inherit;
   cursor: pointer;
   background-color: transparent;
@@ -27,6 +28,11 @@
   padding: 0.5rem 2rem;
   border-radius: 25px;
   margin-left: 1rem;
+}
+
+.close-button {
+  display: block;
+  margin-left: auto;
 }
 
 .actions button:hover,
