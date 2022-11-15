@@ -25,16 +25,13 @@ const Cart = props => {
   };
 
   const orderConfirmHandler = async userData => {
-    const response = await fetch(
-      'https://food-order-demo-a5a37-default-rtdb.europe-west1.firebasedatabase.app/orders.json',
-      {
-        method: 'POST',
-        body: JSON.stringify({
-          user: userData,
-          orderItems: cartCtx.items,
-        }),
-      }
-    );
+    const response = await fetch(process.env.REACT_APP_DATABASE_URL_ORDERS, {
+      method: 'POST',
+      body: JSON.stringify({
+        user: userData,
+        orderItems: cartCtx.items,
+      }),
+    });
 
     if (response.ok) {
       setFormSubmitted(true);

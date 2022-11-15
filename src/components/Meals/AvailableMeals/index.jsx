@@ -10,9 +10,7 @@ function AvailableMeals() {
   useEffect(() => {
     const getMealsData = async function () {
       try {
-        const response = await fetch(
-          'https://food-order-demo-a5a37-default-rtdb.europe-west1.firebasedatabase.app/meals.json'
-        );
+        const response = await fetch(process.env.REACT_APP_DATABASE_URL_MEALS);
 
         if (!response.ok) {
           throw new Error('Something went wrong!');
